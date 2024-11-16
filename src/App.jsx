@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.scss';
 import TodoList from './components/TodoList';
+import InputList from './components/InputList';
 
 
 
@@ -70,10 +71,10 @@ function App() {
   return (
     <div className='App-header '>
       <div className='container'>
-          <div className='Add-tasks'>
-            <input type="text" onChange={handleChange} value={newTask} placeholder='Add new task'/>
-            <button onClick={AddTask}>Add task</button>
-          </div>
+          <InputList handleChange={handleChange}
+                     newTask={newTask} 
+                     AddTask={AddTask}
+          />
           
           <div className='list'>
             {todoList.map((task) => {
